@@ -33,9 +33,9 @@ export default function AboutPage() {
 
         <section className="py-16 lg:py-24">
           <div className="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-start">
-            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl shadow-blue-900/10 max-h-[520px]">
+            <div className="relative aspect-[4/5] lg:aspect-[8/6] rounded-3xl overflow-hidden shadow-2xl shadow-blue-900/10 max-h-[520px]">
               <Image
-                src="/images/dentist-team.jpg"
+                src="/images/singleton-smiles-garden.png"
                 alt="Dr. Michael Singleton with the Singleton Smiles team"
                 fill
                 className="object-cover"
@@ -72,6 +72,7 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
+  
 
         <section className="py-16 lg:py-24 bg-slate-50/50 border-y border-slate-100">
           <div className="max-w-3xl mx-auto px-6 lg:px-8">

@@ -18,6 +18,7 @@ import { services } from "@/lib/services"
 import { cn } from "@/lib/utils"
 
 const navAfterServices = [
+  { href: "/about#team", label: "Our Staff" },
   { href: "/reviews", label: "Reviews" },
   { href: "/new-patients", label: "New Patients" },
   { href: "/contact", label: "Contact" },
