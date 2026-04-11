@@ -1,13 +1,13 @@
-import type { Metadata } from "next"
+import { createPageMetadata } from "@/lib/seo"
 import { SiteShell } from "@/components/site-shell"
 import { ContactForm } from "@/components/contact-form"
 import { MapPin, Phone, Clock, Mail } from "lucide-react"
 
-export const metadata: Metadata = {
-  title: "Contact & Book | Singleton Smiles",
+export const metadata = createPageMetadata("/contact", {
+  title: "Contact & Book",
   description:
     "Contact Singleton Smiles in Saline, MI — book online or call (734) 429-7415. 1081 N. Ann Arbor St.",
-}
+})
 
 const cardClass =
   "flex h-full flex-col rounded-2xl border border-slate-200/80 bg-white p-8 shadow-sm shadow-slate-900/[0.04] lg:p-10"

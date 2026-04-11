@@ -9,6 +9,11 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: "/before-after",
+        destination: "/smile-gallery",
+        permanent: true,
+      },
+      {
         source: "/abouteam",
         destination: "/about#team",
         permanent: false,

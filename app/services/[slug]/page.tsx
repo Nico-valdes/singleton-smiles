@@ -4,6 +4,7 @@ import { notFound } from "next/navigation"
 import { SiteShell } from "@/components/site-shell"
 import { Button } from "@/components/ui/button"
 import { getAllServiceSlugs, getServiceBySlug } from "@/lib/services"
+import { absoluteUrl, siteConfig } from "@/lib/seo"
 import { ArrowLeft, ArrowRight } from "lucide-react"
 
 type Props = { params: Promise<{ slug: string }> }
@@ -16,11 +17,39 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
   const service = getServiceBySlug(slug)
   if (!service) {
-    return { title: "Service | Singleton Smiles" }
+    return { title: "Not found", robots: { index: false, follow: false } }
   }
+  const path = `/services/${slug}`
+  const fullTitle = `${service.title} | ${siteConfig.name}`
   return {
-    title: `${service.title} | Singleton Smiles`,
+    title: service.title,
     description: service.shortDescription,
+    alternates: {
+      canonical: absoluteUrl(path),
+    },
+    openGraph: {
+      type: "website",
+      locale: siteConfig.locale,
+      url: absoluteUrl(path),
+      siteName: siteConfig.name,
+      title: fullTitle,
+      description: service.shortDescription,
+      images: [
+        {
+          url: siteConfig.ogImage,
+          width: 1200,
+          height: 630,
+          alt: siteConfig.ogImageAlt,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: fullTitle,
+      description: service.shortDescription,
+      images: [siteConfig.ogImage],
+      creator: siteConfig.twitterHandle,
+    },
   }
 }
 

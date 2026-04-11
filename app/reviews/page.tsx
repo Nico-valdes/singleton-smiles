@@ -1,14 +1,14 @@
-import type { Metadata } from "next"
+import { createPageMetadata } from "@/lib/seo"
 import Link from "next/link"
 import { SiteShell } from "@/components/site-shell"
 import { reviews } from "@/lib/reviews"
 import { Star, ArrowRight } from "lucide-react"
 
-export const metadata: Metadata = {
-  title: "Patient Reviews | Singleton Smiles",
+export const metadata = createPageMetadata("/reviews", {
+  title: "Patient Reviews",
   description:
     "Read patient stories and reviews for Singleton Smiles — trusted dental care in Saline, MI with a 5.0 Google rating.",
-}
+})
 
 export default function ReviewsPage() {
   return (

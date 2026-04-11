@@ -19,6 +19,7 @@ import { cn } from "@/lib/utils"
 
 const navAfterServices = [
   { href: "/about#team", label: "Our Staff" },
+  { href: "/smile-gallery", label: "Smile Gallery" },
   { href: "/reviews", label: "Reviews" },
   { href: "/new-patients", label: "New Patients" },
   { href: "/contact", label: "Contact" },
@@ -42,7 +43,8 @@ export function Navigation() {
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50)
+    const handleScroll = () => setScrolled(window.scrollY > 24)
+    handleScroll()
     window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
@@ -58,8 +60,9 @@ export function Navigation() {
       <header
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-[background-color,border-color,box-shadow,backdrop-filter] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
-          "border-b border-slate-200/50 bg-white/75 backdrop-blur-md lg:border-transparent lg:bg-transparent lg:backdrop-blur-none lg:shadow-none",
-          scrolled && "lg:bg-white/95 lg:backdrop-blur-xl lg:border-slate-100 lg:shadow-sm",
+          scrolled
+            ? "border-b border-slate-200/50 bg-white/95 backdrop-blur-xl shadow-sm"
+            : "border-b border-transparent bg-transparent shadow-none backdrop-blur-none",
         )}
       >
         <nav
@@ -161,7 +164,10 @@ export function Navigation() {
           <button
             type="button"
             onClick={() => setMobileOpen(true)}
-            className="flex h-10 w-10 items-center justify-center rounded-lg text-slate-700 transition-colors hover:bg-slate-100/80 lg:hidden"
+            className={cn(
+              "flex h-10 w-10 items-center justify-center rounded-lg transition-colors lg:hidden",
+              scrolled ? "text-slate-700 hover:bg-slate-100/80" : "text-slate-800 hover:bg-slate-900/[0.06]",
+            )}
             aria-label="Open menu"
             aria-expanded={mobileOpen}
           >

@@ -1,4 +1,4 @@
-import type { Metadata } from "next"
+import { createPageMetadata } from "@/lib/seo"
 import Image from "next/image"
 import Link from "next/link"
 import { SiteShell } from "@/components/site-shell"
@@ -7,11 +7,11 @@ import { Button } from "@/components/ui/button"
 import { dentalAssistants, dentalHygienists, officeTeam } from "@/lib/team"
 import { ArrowRight } from "lucide-react"
 
-export const metadata: Metadata = {
-  title: "About Us | Singleton Smiles",
+export const metadata = createPageMetadata("/about", {
+  title: "About Us",
   description:
     "Meet Dr. Michael Singleton and the Singleton Smiles team — compassionate, award-winning dental care in Saline, MI since 1985.",
-}
+})
 
 export default function AboutPage() {
   return (

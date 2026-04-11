@@ -1,14 +1,14 @@
-import type { Metadata } from "next"
+import { createPageMetadata } from "@/lib/seo"
 import Link from "next/link"
 import { SiteShell } from "@/components/site-shell"
 import { Button } from "@/components/ui/button"
 import { Check, ArrowRight } from "lucide-react"
 
-export const metadata: Metadata = {
-  title: "New Patients | Singleton Smiles",
+export const metadata = createPageMetadata("/new-patients", {
+  title: "New Patients",
   description:
     "What to expect at your first visit, financing options, insurance information, and patient forms — Singleton Smiles in Saline, MI.",
-}
+})
 
 const expectations = [
   "A warm greeting from a team that listens to your goals and concerns",

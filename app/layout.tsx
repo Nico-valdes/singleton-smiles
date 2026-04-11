@@ -1,41 +1,104 @@
-import type { Metadata } from 'next'
-import { Playfair_Display, Inter } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/next'
-import './globals.css'
+import type { Metadata, Viewport } from "next"
+import { Playfair_Display, Inter } from "next/font/google"
+import { Analytics } from "@vercel/analytics/next"
+import { OrganizationJsonLd } from "@/components/organization-json-ld"
+import { absoluteUrl, getSiteUrl, siteConfig } from "@/lib/seo"
+import "./globals.css"
 
-const playfair = Playfair_Display({ 
+const playfair = Playfair_Display({
   subsets: ["latin"],
-  variable: '--font-serif',
-  display: 'swap',
-});
+  variable: "--font-serif",
+  display: "swap",
+})
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ["latin"],
-  variable: '--font-sans',
-  display: 'swap',
-});
+  variable: "--font-sans",
+  display: "swap",
+})
+
+const metadataBase = new URL(getSiteUrl())
 
 export const metadata: Metadata = {
-  title: 'Singleton Smiles | Modern Dentistry',
-  description: 'Experience exceptional dental care with a gentle touch. Singleton Smiles offers comprehensive dentistry services in a warm, welcoming environment.',
-  generator: 'v0.app',
-  icons: {
-    icon: [
+  metadataBase,
+  title: {
+    default: siteConfig.defaultTitle,
+    template: siteConfig.titleTemplate,
+  },
+  description: siteConfig.defaultDescription,
+  applicationName: siteConfig.name,
+  authors: [{ name: siteConfig.name, url: absoluteUrl("/") }],
+  creator: siteConfig.name,
+  publisher: siteConfig.legalName,
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  keywords: [
+    "dentist Saline MI",
+    "Saline dentist",
+    "Singleton Smiles",
+    "cosmetic dentistry",
+    "family dentist",
+    "dental implants",
+    "same day crowns",
+    "sedation dentistry",
+    "laser dentistry",
+    "Michael Singleton DDS",
+  ],
+  openGraph: {
+    type: "website",
+    locale: siteConfig.locale,
+    url: absoluteUrl("/"),
+    siteName: siteConfig.name,
+    title: siteConfig.defaultTitle,
+    description: siteConfig.defaultDescription,
+    images: [
       {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 630,
+        alt: siteConfig.ogImageAlt,
       },
     ],
-    apple: '/apple-icon.png',
   },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.defaultTitle,
+    description: siteConfig.defaultDescription,
+    images: [siteConfig.ogImage],
+    creator: siteConfig.twitterHandle,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  icons: {
+    icon: [{ url: "/favicon.jpg", type: "image/jpeg" }],
+    apple: [{ url: "/favicon.jpg", type: "image/jpeg", sizes: "180x180" }],
+  },
+  ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION && {
+    verification: {
+      google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+    },
+  }),
+}
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#0f172a" },
+  ],
 }
 
 export default function RootLayout({
@@ -44,10 +107,11 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
+    <html lang={siteConfig.language} className={`${playfair.variable} ${inter.variable}`}>
       <body className="font-sans antialiased bg-background text-foreground">
+        <OrganizationJsonLd />
         {children}
-        {process.env.NODE_ENV === 'production' && <Analytics />}
+        {process.env.NODE_ENV === "production" && <Analytics />}
       </body>
     </html>
   )

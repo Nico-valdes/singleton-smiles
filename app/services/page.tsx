@@ -1,4 +1,4 @@
-import type { Metadata } from "next"
+import { createPageMetadata } from "@/lib/seo"
 import Link from "next/link"
 import { SiteShell } from "@/components/site-shell"
 import { services } from "@/lib/services"
@@ -16,11 +16,11 @@ import {
   type LucideIcon,
 } from "lucide-react"
 
-export const metadata: Metadata = {
-  title: "Dental Services | Singleton Smiles",
+export const metadata = createPageMetadata("/services", {
+  title: "Dental Services",
   description:
     "Sedation dentistry, laser dentistry, preventative care, implants, same-day crowns, cosmetic dentistry, braces, extractions, and sleep apnea treatment in Saline, MI.",
-}
+})
 
 const iconBySlug: Record<string, LucideIcon> = {
   "sedation-dentistry": Moon,
