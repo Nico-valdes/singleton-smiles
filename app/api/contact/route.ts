@@ -5,6 +5,7 @@ const contactSchema = z.object({
   name: z.string().min(1, "Name is required"),
   email: z.string().email("Valid email required"),
   phone: z.string().optional(),
+  topic: z.string().optional(),
   message: z.string().min(10, "Message should be at least 10 characters"),
 })
 
