@@ -39,6 +39,14 @@ export const siteConfig = {
   ogImageAlt: "Singleton Smiles dental team in Saline, Michigan",
 } as const
 
+/**
+ * URL to leave a Google review (Google Business “Ask for reviews” / review form).
+ * Set `NEXT_PUBLIC_GOOGLE_REVIEW_URL` to the link from your Business Profile; otherwise falls back to Maps search for the practice.
+ */
+export const googleReviewUrl =
+  (typeof process !== "undefined" && process.env.NEXT_PUBLIC_GOOGLE_REVIEW_URL?.trim()) ||
+  "https://www.google.com/maps/search/?api=1&query=Singleton+Smiles+1081+N+Ann+Arbor+St+Saline+MI+48176"
+
 export function getSiteUrl(): string {
   const fromEnv = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "")
   if (fromEnv) return fromEnv

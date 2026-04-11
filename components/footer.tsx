@@ -2,6 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Facebook, Instagram } from "lucide-react"
 import { RevealOnView } from "@/components/reveal-on-view"
+import { GoogleReviewCta } from "@/components/google-review-cta"
 
 const footerLinks = {
   services: [
@@ -41,7 +42,7 @@ export function Footer() {
           <RevealOnView className="lg:col-span-2">
             <Link href="/" className="mb-6 inline-block transition-opacity duration-300 hover:opacity-90">
               <Image
-                src="/images/logosingleton.png"
+                src="/images/Singleton-Smiles-Logo-red-3-768x480.jpg"
                 alt="Singleton Smiles"
                 width={280}
                 height={88}
@@ -94,6 +95,7 @@ export function Footer() {
                 </svg>
               </a>
             </div>
+            <GoogleReviewCta variant="footer" />
           </RevealOnView>
 
           <RevealOnView delayMs={70}>

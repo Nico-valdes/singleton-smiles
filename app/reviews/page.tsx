@@ -3,6 +3,7 @@ import Link from "next/link"
 import { SiteShell } from "@/components/site-shell"
 import { reviews } from "@/lib/reviews"
 import { YoutubeTestimonialPreview } from "@/components/youtube-testimonial-preview"
+import { GoogleReviewCta } from "@/components/google-review-cta"
 import { Star, ArrowRight } from "lucide-react"
 
 export const metadata = createPageMetadata("/reviews", {
@@ -25,16 +26,17 @@ export default function PatientTestimonialsPage() {
             </p>
           </header>
 
-          <div className="mb-16 flex flex-wrap items-center gap-8 rounded-2xl border border-slate-100 bg-slate-50 p-8">
-            <div className="flex items-center gap-2">
-              <span className="font-serif text-4xl text-slate-900">5.0</span>
-              <Star className="h-8 w-8 fill-amber-400 text-amber-400" />
+          <div className="mb-16 rounded-2xl border border-slate-100 bg-slate-50 p-6 sm:p-8">
+            <div className="flex flex-col gap-4 md:flex-row md:items-center md:gap-8">
+              <div className="flex shrink-0 items-center gap-2">
+                <span className="font-serif text-4xl text-slate-900">5.0</span>
+                <Star className="h-8 w-8 fill-amber-400 text-amber-400" />
+              </div>
+              <div className="hidden h-10 w-px shrink-0 bg-slate-200 md:block" aria-hidden />
+              <div className="min-w-0 flex-1">
+                <GoogleReviewCta variant="trustBox" />
+              </div>
             </div>
-            <div className="hidden h-10 w-px bg-slate-200 sm:block" />
-            <p className="max-w-xl text-slate-600">
-              Thank you for trusting our team with your care. Below, patients share what their experience has meant to
-              them in their own words.
-            </p>
           </div>
 
           <ol className="space-y-12 lg:space-y-16">
