@@ -20,7 +20,7 @@ const footerLinks = {
     { label: "About Us", href: "/about" },
     { label: "Our Team", href: "/about#team" },
     { label: "Smile Gallery", href: "/smile-gallery" },
-    { label: "Reviews", href: "/reviews" },
+    { label: "Testimonials", href: "/reviews" },
     { label: "Contact", href: "/contact" },
   ],
   patients: [

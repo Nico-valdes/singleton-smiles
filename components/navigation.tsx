@@ -20,7 +20,7 @@ import { cn } from "@/lib/utils"
 const navAfterServices = [
   { href: "/about#team", label: "Our Staff" },
   { href: "/smile-gallery", label: "Smile Gallery" },
-  { href: "/reviews", label: "Reviews" },
+  { href: "/reviews", label: "Testimonials" },
   { href: "/new-patients", label: "New Patients" },
   { href: "/contact", label: "Contact" },
 ] as const
