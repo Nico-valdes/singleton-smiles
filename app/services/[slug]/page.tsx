@@ -4,7 +4,7 @@ import { notFound } from "next/navigation"
 import { SiteShell } from "@/components/site-shell"
 import { Button } from "@/components/ui/button"
 import { getAllServiceSlugs, getServiceBySlug } from "@/lib/services"
-import { absoluteUrl, siteConfig } from "@/lib/seo"
+import { absoluteUrl, defaultOpenGraphImages, siteConfig } from "@/lib/seo"
 import { ArrowLeft, ArrowRight } from "lucide-react"
 
 type Props = { params: Promise<{ slug: string }> }
@@ -34,14 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       siteName: siteConfig.name,
       title: fullTitle,
       description: service.shortDescription,
-      images: [
-        {
-          url: siteConfig.ogImage,
-          width: 1200,
-          height: 630,
-          alt: siteConfig.ogImageAlt,
-        },
-      ],
+      images: [...defaultOpenGraphImages],
     },
     twitter: {
       card: "summary_large_image",

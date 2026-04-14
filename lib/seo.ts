@@ -34,9 +34,14 @@ export const siteConfig = {
     "https://www.instagram.com/singletonsmiles/",
     "https://x.com/SingletonSmiles",
   ],
-  /** Imagen principal para Open Graph / Twitter (ruta bajo /public) */
-  ogImage: "/images/singleton-smiles-garden.png",
-  ogImageAlt: "Singleton Smiles dental team in Saline, Michigan",
+  /**
+   * Imagen para Open Graph / Twitter / JSON-LD (bajo /public).
+   * Debe ser marca (logo), no fotos de pacientes ni miniaturas de vídeo, para que los enlaces no muestren caras ajenas en la vista previa.
+   */
+  ogImage: "/images/Singleton-Smiles-Logo-red-3-768x480.jpg",
+  ogImageAlt: "Singleton Smiles — family and cosmetic dentistry in Saline, Michigan",
+  ogImageWidth: 768,
+  ogImageHeight: 480,
 } as const
 
 /**
@@ -61,11 +66,12 @@ export function absoluteUrl(path = ""): string {
   return `${base}${p}`
 }
 
-const ogImages = [
+/** Misma imagen y dimensiones en todas las rutas que definen Open Graph (evita que el merge de metadatos deje `og:image` vacío). */
+export const defaultOpenGraphImages = [
   {
     url: siteConfig.ogImage,
-    width: 1200,
-    height: 630,
+    width: siteConfig.ogImageWidth,
+    height: siteConfig.ogImageHeight,
     alt: siteConfig.ogImageAlt,
   },
 ] as const
@@ -102,7 +108,7 @@ export function createPageMetadata(
       siteName: siteConfig.name,
       title: fullTitle,
       description: opts.description,
-      images: [...ogImages],
+      images: [...defaultOpenGraphImages],
     },
     twitter: {
       card: "summary_large_image",

@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next"
 import { Playfair_Display, Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { OrganizationJsonLd } from "@/components/organization-json-ld"
-import { absoluteUrl, getSiteUrl, siteConfig } from "@/lib/seo"
+import { absoluteUrl, defaultOpenGraphImages, getSiteUrl, siteConfig } from "@/lib/seo"
 import "./globals.css"
 
 const playfair = Playfair_Display({
@@ -54,14 +54,7 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     title: siteConfig.defaultTitle,
     description: siteConfig.defaultDescription,
-    images: [
-      {
-        url: siteConfig.ogImage,
-        width: 1200,
-        height: 630,
-        alt: siteConfig.ogImageAlt,
-      },
-    ],
+    images: [...defaultOpenGraphImages],
   },
   twitter: {
     card: "summary_large_image",

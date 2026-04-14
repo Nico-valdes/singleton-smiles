@@ -8,7 +8,7 @@ import { TestimonialsSection } from "@/components/testimonials-section"
 import { TeamSection } from "@/components/team-section"
 import { CTASection } from "@/components/cta-section"
 import { Footer } from "@/components/footer"
-import { absoluteUrl, siteConfig } from "@/lib/seo"
+import { absoluteUrl, defaultOpenGraphImages, siteConfig } from "@/lib/seo"
 
 export const metadata: Metadata = {
   title: {
@@ -22,10 +22,14 @@ export const metadata: Metadata = {
     url: absoluteUrl("/"),
     title: siteConfig.defaultTitle,
     description: siteConfig.defaultDescription,
+    images: [...defaultOpenGraphImages],
   },
   twitter: {
+    card: "summary_large_image",
     title: siteConfig.defaultTitle,
     description: siteConfig.defaultDescription,
+    images: [siteConfig.ogImage],
+    creator: siteConfig.twitterHandle,
   },
 }
 
