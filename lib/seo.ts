@@ -11,7 +11,7 @@ export const siteConfig = {
   defaultTitle: "Singleton Smiles | Family & Cosmetic Dentistry in Saline, MI",
   titleTemplate: "%s | Singleton Smiles",
   defaultDescription:
-    "Award-winning family and cosmetic dentistry in Saline, MI since 1985. Sedation & laser dentistry, implants, same-day crowns, braces, and gentle care. Call (734) 429-7415.",
+    "Award-winning family and cosmetic dentistry in Saline, MI with 30+ years of experience. Sedation & laser dentistry, implants, same-day crowns, braces, and gentle care. Call (734) 429-7415.",
   locale: "en_US",
   language: "en",
   twitterHandle: "@SingletonSmiles",
@@ -48,9 +48,15 @@ export const siteConfig = {
  * URL to leave a Google review (Google Business “Ask for reviews” / review form).
  * Set `NEXT_PUBLIC_GOOGLE_REVIEW_URL` to the link from your Business Profile; otherwise falls back to Maps search for the practice.
  */
+export const googlePlaceId = "ChIJeScqoBm7PIgReWZJP4AoMsY"
+
+/** Directs users to the Google Maps business listing (not just address search). */
+export const googleMapsPlaceUrl =
+  `https://www.google.com/maps/search/?api=1&query=Singleton+Smiles&query_place_id=${googlePlaceId}`
+
 export const googleReviewUrl =
   (typeof process !== "undefined" && process.env.NEXT_PUBLIC_GOOGLE_REVIEW_URL?.trim()) ||
-  "https://www.google.com/maps/search/?api=1&query=Singleton+Smiles+1081+N+Ann+Arbor+St+Saline+MI+48176"
+  `https://search.google.com/local/writereview?placeid=${googlePlaceId}`
 
 export function getSiteUrl(): string {
   const fromEnv = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "")

@@ -80,6 +80,9 @@
 }
 
 @theme inline {
+  --breakpoint-xs: 30rem;
+  --breakpoint-2xl: 88rem;
+  --breakpoint-3xl: 108rem;
   --font-sans: var(--font-sans), 'Inter', system-ui, sans-serif;
   --font-serif: var(--font-serif), 'Playfair Display', Georgia, serif;
   --font-mono: 'Geist Mono', 'Geist Mono Fallback';

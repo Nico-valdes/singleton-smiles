@@ -10,7 +10,7 @@ import { ArrowRight } from "lucide-react"
 export const metadata = createPageMetadata("/about", {
   title: "About Us",
   description:
-    "Meet Dr. Michael Singleton and the Singleton Smiles team — compassionate, award-winning dental care in Saline, MI since 1985.",
+    "Meet Dr. Michael Singleton and the Singleton Smiles team — compassionate, award-winning dental care in Saline, MI with 30+ years of experience.",
 })
 
 export default function AboutPage() {
@@ -32,13 +32,14 @@ export default function AboutPage() {
         </section>
 
         <section className="py-16 lg:py-24">
-          <div className="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-start">
-            <div className="relative aspect-[4/5] lg:aspect-[8/6] rounded-3xl overflow-hidden shadow-2xl shadow-blue-900/10 max-h-[520px]">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-start">
+            <div className="relative aspect-[8/6] rounded-3xl overflow-hidden shadow-2xl shadow-blue-900/10 max-h-[520px]">
               <Image
                 src="/images/singleton-smiles-garden.png"
                 alt="Dr. Michael Singleton with the Singleton Smiles team"
                 fill
-                className="object-cover"
+                sizes="(max-width: 640px) 92vw, (max-width: 1024px) 86vw, 48vw"
+                className="object-cover object-center"
                 priority
               />
             </div>
@@ -82,7 +83,7 @@ export default function AboutPage() {
             </h2>
             <div className="space-y-6 text-slate-600 leading-relaxed">
               <p>
-                Since opening my doors in 1985, I&apos;ve dedicated myself to delivering exceptional dental care built on
+                With 30+ years of experience, I&apos;ve dedicated myself to delivering exceptional dental care built on
                 trust, compassion, and long-lasting relationships. I stay ahead of the curve through continuous training
                 and cutting-edge technologies, ensuring every patient receives the highest quality treatment available.
               </p>

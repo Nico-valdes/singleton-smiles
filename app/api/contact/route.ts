@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server"
 import { z } from "zod"
+import { buildContactEmailContent, getContactFormRecipient } from "@/lib/contact-mail"
+import { createSmtpTransport, getSmtpFromAddress } from "@/lib/smtp"
 
 const contactSchema = z.object({
   name: z.string().min(1, "Name is required"),
@@ -29,9 +31,40 @@ export async function POST(request: Request) {
     )
   }
 
-  // Production: integrate email (e.g. Resend), CRM, or ticketing.
-  if (process.env.NODE_ENV === "development") {
-    console.info("[contact]", parsed.data)
+  const transport = createSmtpTransport()
+  if (!transport) {
+    console.error(
+      "[contact] Missing SMTP config — set SMTP_HOST, SMTP_USER, and SMTP_PASS (see .env.example)",
+    )
+    return NextResponse.json(
+      {
+        error:
+          "This form cannot send email yet (server not configured). Please call (734) 429-7415 or email the office directly.",
+      },
+      { status: 503 },
+    )
+  }
+
+  const recipient = getContactFormRecipient()
+  const { subject, text, html } = buildContactEmailContent(parsed.data)
+  const from = getSmtpFromAddress()
+
+  try {
+    await transport.sendMail({
+      from,
+      to: recipient,
+      replyTo: parsed.data.email,
+      subject,
+      text,
+      html,
+    })
+  } catch (err) {
+    const message = err instanceof Error ? err.message : String(err)
+    console.error("[contact] SMTP send error:", message)
+    return NextResponse.json(
+      { error: "Could not send your message. Please call us or try again later." },
+      { status: 502 },
+    )
   }
 
   return NextResponse.json({ ok: true })

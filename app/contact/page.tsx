@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { createPageMetadata, siteConfig } from "@/lib/seo"
+import { createPageMetadata, googleMapsPlaceUrl, siteConfig } from "@/lib/seo"
 import { SiteShell } from "@/components/site-shell"
 import { ContactForm } from "@/components/contact-form"
 import { Button } from "@/components/ui/button"
@@ -17,8 +17,7 @@ const btnRect =
 
 export default function ContactPage() {
   const { phone, phoneDisplay, email, address } = siteConfig
-  const mapsUrl =
-    "https://www.google.com/maps/search/?api=1&query=1081+N+Ann+Arbor+St+Saline+MI+48176"
+  const mapsUrl = googleMapsPlaceUrl
 
   return (
     <SiteShell>

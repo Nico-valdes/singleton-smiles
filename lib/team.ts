@@ -98,7 +98,8 @@ export const teamGroupsHome: TeamGroupHighlight[] = [
   {
     title: "Dental hygienists",
     description:
-      "Preventive care, thorough cleanings, and clear guidance—so you leave confident about your oral health.",
+      "Preventive care, thorough cleanings, and clear guidance so you leave confident about your oral health.",
+ 
     namesLine: dentalHygienists.map((m) => m.name).join(", "),
     image: "/images/consultorio.png",
   },

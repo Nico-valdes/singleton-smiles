@@ -9,12 +9,15 @@ export function ServicesSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="lg:grid lg:grid-cols-12 lg:gap-12 xl:gap-16">
           <RevealOnView className="mb-10 lg:sticky lg:top-28 lg:col-span-4 lg:mb-0 lg:self-start">
-            <p className="mb-3 text-sm font-medium tracking-widest text-blue-600 uppercase">Services</p>
+            <p className="mb-3 font-serif text-2xl leading-tight text-balance text-blue-600 sm:text-3xl md:text-4xl">
+              Services
+            </p>
             <h2 className="mb-4 font-serif text-2xl leading-tight text-balance text-slate-900 sm:text-3xl md:text-4xl">
               Everything you need, one trusted team
             </h2>
             <p className="text-[15px] leading-relaxed text-slate-600">
-              General, cosmetic, and advanced care in Saline. Each line links to a full page with more detail.
+              General, cosmetic, and advanced care in Saline, including gentle treatment for children of all ages.
+              Each line links to a full page with more detail.
             </p>
             <Link
               href="/services"

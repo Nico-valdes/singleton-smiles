@@ -26,7 +26,13 @@ export function AboutTeamAccordion({ title, members, groupId }: Props) {
               <span className="flex items-center gap-3">
                 <span className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full border border-slate-200 bg-slate-100">
                   {m.photo ? (
-                    <Image src={m.photo} alt={`${m.name} headshot`} fill className="object-cover" />
+                    <Image
+                      src={m.photo}
+                      alt={`${m.name} headshot`}
+                      fill
+                      sizes="48px"
+                      className="object-cover object-top"
+                    />
                   ) : (
                     <span className="flex h-full w-full items-center justify-center text-xs font-semibold text-slate-500">
                       Foto
@@ -41,9 +47,15 @@ export function AboutTeamAccordion({ title, members, groupId }: Props) {
             </AccordionTrigger>
             <AccordionContent className="pb-4">
               <div className="flex flex-col gap-4 sm:flex-row sm:items-start">
-                <div className="relative h-44 w-full shrink-0 overflow-hidden rounded-xl border border-slate-200 bg-slate-50 sm:h-36 sm:w-36">
+                <div className="relative mx-auto h-36 w-36 shrink-0 overflow-hidden rounded-xl border border-slate-200 bg-slate-50 sm:mx-0">
                   {m.photo ? (
-                    <Image src={m.photo} alt={`${m.name} portrait`} fill className="object-cover" />
+                    <Image
+                      src={m.photo}
+                      alt={`${m.name} portrait`}
+                      fill
+                      sizes="144px"
+                      className="object-cover object-top"
+                    />
                   ) : (
                     <div className="flex h-full w-full items-center justify-center text-sm font-medium text-slate-500">
                       Espacio para foto

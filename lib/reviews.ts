@@ -13,22 +13,9 @@ export type Review = {
 }
 
 /** Three spotlight cards on the homepage; full list lives on `/reviews`. */
-export const homepageSpotlightIds: readonly string[] = ["alex", "sophia", "gina"]
+export const homepageSpotlightIds: readonly string[] = ["sophia", "alex", "gina"]
 
 export const reviews: Review[] = [
-  {
-    id: "alex",
-    name: "Alex",
-    role: "Patient for 30+ years",
-    headline: "Alex’s Story",
-    content:
-      "For more than 30 years, Alex has trusted Singleton Smiles for every step of his dental care journey. In his own words, this practice has been his go-to for decades — from the warm environment to the exceptional care provided by Dr. Singleton, whose dedication to his patients and pride in his work truly set him apart.",
-    rating: 5,
-    featured: true,
-    videoUrl: "https://www.youtube.com/watch?v=XFjbhGgav_s",
-    cardQuote:
-      "For more than 30 years, I've trusted Singleton Smiles for every step of my dental care journey. The warm environment and exceptional care truly set them apart.",
-  },
   {
     id: "sophia",
     name: "Sophia",
@@ -41,6 +28,19 @@ export const reviews: Review[] = [
     videoUrl: "https://www.youtube.com/watch?v=dZ6FBgODx0Y",
     cardQuote:
       "Dr. Singleton provided a second opinion that saved me from an unnecessary crown. My entire family trusts Dr. Singleton and his team completely.",
+  },
+  {
+    id: "alex",
+    name: "Alex",
+    role: "Patient for 30+ years",
+    headline: "Alex’s Story",
+    content:
+      "For more than 30 years, Alex has trusted Singleton Smiles for every step of his dental care journey. In his own words, this practice has been his go-to for decades — from the warm environment to the exceptional care provided by Dr. Singleton, whose dedication to his patients and pride in his work truly set him apart.",
+    rating: 5,
+    featured: true,
+    videoUrl: "https://www.youtube.com/watch?v=XFjbhGgav_s",
+    cardQuote:
+      "For more than 30 years, I've trusted Singleton Smiles for every step of my dental care journey. The warm environment and exceptional care truly set them apart.",
   },
   {
     id: "thayrone",

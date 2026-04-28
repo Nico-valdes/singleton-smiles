@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react"
 import { RevealOnView } from "@/components/reveal-on-view"
 
 const stats = [
-  { value: "40+", label: "Years of Experience" },
+  { value: "30+", label: "Years of Experience" },
   { value: "10K+", label: "Happy Patients" },
   { value: "5.0", label: "Google Rating" },
   { value: "1", label: "Visit for Most Procedures" },
@@ -36,9 +36,9 @@ export function AboutSection() {
             </h2>
             <div className="mb-10 space-y-4 leading-relaxed text-slate-600">
               <p>
-                Since opening my doors in 1985, I&apos;ve dedicated myself to delivering exceptional dental care built
-                on trust, compassion, and long-lasting relationships. I stay ahead of the curve through continuous
-                training and cutting-edge technologies.
+                With 30+ years of experience, I&apos;ve dedicated myself to delivering exceptional dental care built on
+                trust, compassion, and long-lasting relationships. I stay ahead of the curve through continuous training
+                and cutting-edge technologies.
               </p>
               <p>
                 What first drew me to Saline years ago wasn&apos;t just the place — it was the people. The warm,
