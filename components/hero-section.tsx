@@ -144,8 +144,8 @@ export function HeroSection() {
         </div>
 
         <div className="animate-hero-enter" style={{ animationDelay: "390ms" }}>
-          <div className="flex flex-wrap items-center gap-x-5 gap-y-2.5 border-t border-border/60 pt-6">
-            <div className="flex items-center gap-1.5">
+          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2.5 border-t border-border/60 pt-6 sm:justify-start">
+            <div className="flex items-center gap-1.5 justify-center sm:justify-start w-full sm:w-auto">
               <div className="flex items-center gap-0.5">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="h-3 w-3 fill-amber-400 text-amber-400 sm:h-3.5 sm:w-3.5" />
@@ -156,7 +156,7 @@ export function HeroSection() {
               </span>
             </div>
 
-            <div className="flex items-center gap-3 text-[11px] text-muted-foreground sm:text-xs">
+            <div className="flex items-center justify-center gap-3 text-[11px] text-muted-foreground sm:text-xs w-full sm:w-auto">
               <span>150+ reviews</span>
               <span className="text-border">·</span>
               <span>Since 1985</span>
@@ -171,6 +171,7 @@ export function HeroSection() {
         <span className="h-1.5 w-1.5 rounded-full bg-primary" />
         <span className="font-sans tracking-wide">1081 N. Ann Arbor St, Saline, MI</span>
       </div>
+
 
       <div className="pointer-events-none absolute bottom-5 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-1.5 text-muted-foreground lg:bottom-6 lg:left-[27%]">
         <span className="font-sans text-[9px] uppercase tracking-[0.2em] sm:text-[10px]">Scroll</span>
