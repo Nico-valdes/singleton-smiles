@@ -58,12 +58,12 @@ export default async function ServiceDetailPage({ params }: Props) {
           <div className="max-w-3xl mx-auto px-6 lg:px-8">
             <Link
               href="/services"
-              className="inline-flex items-center gap-2 text-sm font-medium text-blue-600 hover:underline mb-8"
+              className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
             >
               <ArrowLeft className="h-4 w-4" />
               All services
             </Link>
-            <p className="text-sm font-medium tracking-widest uppercase text-blue-600 mb-4">Service</p>
+            <p className="mb-4 text-sm font-medium tracking-widest text-primary uppercase">Service</p>
             <h1 className="font-serif text-4xl sm:text-5xl text-slate-900 mb-6 text-balance">{service.title}</h1>
             <p className="text-xl text-slate-600 leading-relaxed">{service.shortDescription}</p>
           </div>
@@ -77,13 +77,17 @@ export default async function ServiceDetailPage({ params }: Props) {
           </div>
 
           <div className="max-w-3xl mx-auto px-6 lg:px-8 mt-12 flex flex-wrap gap-4">
-            <Button asChild className="rounded-full bg-blue-600 hover:bg-blue-700">
+            <Button asChild className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90">
               <Link href="/contact">
                 Request an appointment
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </Button>
-            <Button asChild variant="outline" className="rounded-full">
+            <Button
+              asChild
+              variant="outline"
+              className="rounded-full border-primary/30 hover:border-primary/60 hover:bg-primary/5 hover:text-primary"
+            >
               <Link href="tel:+17344297415">Call (734) 429-7415</Link>
             </Button>
           </div>

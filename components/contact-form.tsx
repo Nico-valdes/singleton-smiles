@@ -24,7 +24,7 @@ export type ContactFormValues = z.infer<typeof contactSchema>
 const field = cn(
   "h-10 rounded-md border-slate-200/90 bg-white px-3 text-sm text-slate-900",
   "placeholder:text-slate-400",
-  "focus-visible:border-blue-400 focus-visible:ring-2 focus-visible:ring-blue-500/15",
+  "focus-visible:border-primary/60 focus-visible:ring-2 focus-visible:ring-primary/20",
 )
 
 const labelClass = "text-xs font-medium text-slate-600"
@@ -151,7 +151,7 @@ export function ContactForm() {
 
       <Button
         type="submit"
-        className="h-11 w-full rounded-md bg-blue-600 text-sm font-medium text-white shadow-sm hover:bg-blue-700"
+        className="h-11 w-full rounded-md bg-primary text-sm font-medium text-primary-foreground shadow-[0_10px_24px_-12px_hsl(var(--primary))] hover:bg-primary/90"
         disabled={form.formState.isSubmitting}
       >
         {form.formState.isSubmitting ? (
@@ -165,7 +165,7 @@ export function ContactForm() {
       </Button>
       <p className="text-center text-[11px] leading-relaxed text-slate-500 sm:text-xs">
         Emergency? Call{" "}
-        <a href="tel:+17344297415" className="font-medium text-blue-600 hover:underline">
+        <a href="tel:+17344297415" className="font-medium text-primary hover:underline">
           (734) 429-7415
         </a>
       </p>

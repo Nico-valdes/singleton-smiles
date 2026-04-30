@@ -46,6 +46,9 @@ export const metadata: Metadata = {
     "sedation dentistry",
     "laser dentistry",
     "Michael Singleton DDS",
+    "Singleton Smiles Saline MI",
+    "Singleton Smiles Saline",
+    "Singleton Smiles Ann Arbor",
   ],
   openGraph: {
     type: "website",

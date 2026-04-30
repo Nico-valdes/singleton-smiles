@@ -3,20 +3,9 @@ import Link from "next/link"
 import { Facebook, Instagram, Youtube } from "lucide-react"
 import { RevealOnView } from "@/components/reveal-on-view"
 import { GoogleReviewCta } from "@/components/google-review-cta"
+import { services } from "@/lib/services"
 
 const footerLinks = {
-  services: [
-    { label: "Sedation Dentistry", href: "/services/sedation-dentistry" },
-    { label: "LASER Dentistry", href: "/services/laser-dentistry" },
-    { label: "Preventative Care", href: "/services/preventative" },
-    { label: "Restorative Services", href: "/services/restorative" },
-    { label: "Dental Implants", href: "/services/implants" },
-    { label: "Same Day Crowns", href: "/services/same-day-crowns" },
-    { label: "Cosmetic Dentistry", href: "/services/cosmetic" },
-    { label: "Orthodontic Braces", href: "/services/orthodontic-braces" },
-    { label: "Extractions", href: "/services/extractions" },
-    { label: "Sleep Apnea", href: "/services/sleep-apnea" },
-  ],
   practice: [
     { label: "About Us", href: "/about" },
     { label: "Our Team", href: "/about#team" },
@@ -42,7 +31,7 @@ export function Footer() {
           <RevealOnView className="lg:col-span-2">
             <Link href="/" className="mb-6 inline-block transition-opacity duration-300 hover:opacity-90">
               <Image
-                src="/images/Singleton-Smiles-Logo-red-3-768x480.jpg"
+                src="/favicon.jpeg"
                 alt="Singleton Smiles"
                 width={280}
                 height={88}
@@ -121,10 +110,10 @@ export function Footer() {
           <RevealOnView delayMs={70}>
             <h4 className="mb-4 font-medium">Services</h4>
             <ul className="columns-1 gap-x-8 sm:columns-2 [&>li]:mb-3">
-              {footerLinks.services.map((link) => (
-                <li key={link.label} className="break-inside-avoid">
-                  <Link href={link.href} className={linkFooter}>
-                    {link.label}
+              {services.map((service) => (
+                <li key={service.slug} className="break-inside-avoid">
+                  <Link href={`/services/${service.slug}`} className={linkFooter}>
+                    {service.menuLabel}
                   </Link>
                 </li>
               ))}

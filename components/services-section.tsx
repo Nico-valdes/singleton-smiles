@@ -1,9 +1,20 @@
+ "use client"
+
+import { useMemo, useState } from "react"
 import Link from "next/link"
-import { ArrowRight, ArrowUpRight, ChevronRight } from "lucide-react"
+import { ArrowRight, ArrowUpRight, ChevronDown, ChevronRight, ChevronUp } from "lucide-react"
 import { services } from "@/lib/services"
 import { RevealOnView } from "@/components/reveal-on-view"
 
 export function ServicesSection() {
+  const [showAllServices, setShowAllServices] = useState(false)
+
+  const visibleServices = useMemo(
+    () => (showAllServices ? services : services.slice(0, 4)),
+    [showAllServices],
+  )
+  const hiddenCount = services.length - 4
+
   return (
     <section id="services" className="border-t border-slate-100 bg-white py-14 sm:py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -30,7 +41,7 @@ export function ServicesSection() {
 
           <div className="lg:col-span-8">
             <ul className="divide-y divide-slate-200 border-t border-slate-200">
-              {services.map((s, index) => (
+              {visibleServices.map((s, index) => (
                 <li key={s.slug}>
                   <RevealOnView delayMs={index * 45}>
                     <Link
@@ -53,6 +64,22 @@ export function ServicesSection() {
                 </li>
               ))}
             </ul>
+
+            {hiddenCount > 0 ? (
+              <RevealOnView delayMs={220} className="mt-6 flex justify-start">
+                <button
+                  type="button"
+                  onClick={() => setShowAllServices((prev) => !prev)}
+                  aria-expanded={showAllServices}
+                  className="inline-flex items-center gap-1.5 text-sm font-medium text-blue-600 underline-offset-4 transition-[color,opacity] duration-300 hover:text-blue-700 hover:underline hover:opacity-90"
+                >
+                  {showAllServices
+                    ? "Show fewer services in this section"
+                    : `Show all services in this section (+${hiddenCount})`}
+                  {showAllServices ? <ChevronUp className="size-4" /> : <ChevronDown className="size-4" />}
+                </button>
+              </RevealOnView>
+            ) : null}
           </div>
         </div>
       </div>

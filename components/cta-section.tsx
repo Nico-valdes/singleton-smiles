@@ -80,7 +80,7 @@ export function CTASection() {
               <Button
                 asChild
                 size="lg"
-                className="h-14 min-w-0 flex-1 rounded-full bg-blue-600 px-4 text-sm text-white shadow-lg shadow-blue-600/20 transition-[transform,box-shadow] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:translate-y-px hover:bg-blue-700 hover:shadow-md motion-reduce:hover:translate-y-0 sm:flex-none sm:px-8 sm:text-base"
+                className="h-14 min-w-0 flex-1 rounded-full bg-primary px-4 text-sm text-primary-foreground shadow-[0_14px_32px_-18px_hsl(var(--primary))] transition-[transform,box-shadow] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:translate-y-px hover:bg-primary/90 hover:shadow-[0_18px_36px_-18px_hsl(var(--primary))] motion-reduce:hover:translate-y-0 sm:flex-none sm:px-8 sm:text-base"
               >
                 <Link href="/contact" className="flex min-w-0 items-center justify-center gap-1">
                   <span className="min-w-0 truncate sm:whitespace-normal">Book Online</span>

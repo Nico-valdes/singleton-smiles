@@ -18,7 +18,7 @@ export function AboutSection() {
           <RevealOnView distance="md" subtleBlur className="relative mx-auto w-full max-w-lg lg:mx-0 lg:max-w-none">
             <div className="premium-hover relative aspect-[4/5] overflow-hidden rounded-2xl shadow-2xl shadow-blue-900/10 sm:rounded-3xl">
               <Image
-                src="/images/chad.png"
+                src="/images/michael_singleton1.jpeg"
                 alt="Dr. Michael Singleton, DDS - Founder of Singleton Smiles"
                 fill
                 className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.02] motion-reduce:hover:scale-100"

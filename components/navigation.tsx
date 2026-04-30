@@ -77,12 +77,13 @@ export function Navigation() {
             <Image
               src={logoSrc}
               alt={logoAlt}
-              width={280}
-              height={88}
+              width={340}
+              height={108}
               priority
-              className="h-8 w-auto max-w-[min(200px,46vw)] object-contain object-left sm:max-w-[220px] lg:h-11 lg:max-w-[260px]"
+              className="h-10 w-auto max-w-[min(260px,54vw)] object-contain object-left sm:max-w-[270px] lg:h-14 lg:max-w-[320px]"
             />
           </Link>
+    
 
           {/* Desktop — estilo original */}
           <div className="hidden items-center gap-8 lg:flex">
@@ -155,7 +156,10 @@ export function Navigation() {
               (734) 429-7415
               <span className={underlineClass} />
             </Link>
-            <Button asChild className="rounded-full bg-blue-600 px-6 text-white hover:bg-blue-700">
+            <Button
+              asChild
+              className="rounded-full bg-primary px-6 text-primary-foreground hover:bg-primary/90"
+            >
               <Link href="/contact">Book Now</Link>
             </Button>
           </div>
@@ -213,7 +217,7 @@ export function Navigation() {
             <div className="mb-6 flex flex-row gap-2 sm:gap-3">
               <Button
                 asChild
-                className="h-11 min-w-0 flex-1 rounded-full bg-blue-600 text-sm font-medium text-white hover:bg-blue-700"
+                className="h-11 min-w-0 flex-1 rounded-full bg-primary text-sm font-medium text-primary-foreground hover:bg-primary/90"
               >
                 <Link href="/contact" onClick={closeMobile} className="px-3">
                   Book visit

@@ -38,7 +38,7 @@ export const siteConfig = {
    * Imagen para Open Graph / Twitter / JSON-LD (bajo /public).
    * Debe ser marca (logo), no fotos de pacientes ni miniaturas de vídeo, para que los enlaces no muestren caras ajenas en la vista previa.
    */
-  ogImage: "/images/Singleton-Smiles-Logo-red-3-768x480.jpg",
+  ogImage: "/favicon.jpeg",
   ogImageAlt: "Singleton Smiles — family and cosmetic dentistry in Saline, Michigan",
   ogImageWidth: 768,
   ogImageHeight: 480,

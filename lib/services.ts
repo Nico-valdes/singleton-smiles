@@ -45,6 +45,18 @@ export const services: Service[] = [
     ],
   },
   {
+    slug: "pediatric-dentistry",
+    title: "Pediatric Dentistry",
+    menuLabel: "Pediatric dentistry",
+    homeTeaser: "Gentle kids' care with a warm approach — your children will love us.",
+    shortDescription:
+      "Positive, prevention-focused dental care for children in a friendly setting built around comfort and trust.",
+    paragraphs: [
+      "Pediatric dentistry at Singleton Smiles is designed to help children feel safe, understood, and excited about caring for their smile. Our team uses a calm, encouraging approach to build confidence from the very first visit.",
+      "From cleanings and exams to growth monitoring and preventive guidance, we tailor each appointment to your child’s age and needs. Children love us—and parents love the healthy habits and confidence their kids build over time.",
+    ],
+  },
+  {
     slug: "restorative",
     title: "Restorative Services",
     menuLabel: "Restorative care",
@@ -94,6 +106,18 @@ export const services: Service[] = [
     ],
   },
   {
+    slug: "teeth-whitening",
+    title: "Teeth Whitening",
+    menuLabel: "Teeth whitening",
+    homeTeaser: "Lift stains safely and reveal a brighter smile, fast.",
+    shortDescription:
+      "Professional whitening options that deliver noticeably brighter results while protecting your enamel.",
+    paragraphs: [
+      "Our professional teeth whitening treatments are customized to your goals, timeline, and sensitivity level. Whether you want a subtle refresh or a dramatic brightening, we will guide you to the right option.",
+      "Compared to over-the-counter products, professional whitening offers more even, predictable results with safer application and expert supervision.",
+    ],
+  },
+  {
     slug: "orthodontic-braces",
     title: "Orthodontic Braces",
     menuLabel: "Braces & alignment",
@@ -115,6 +139,18 @@ export const services: Service[] = [
       "Thoughtful care and clear guidance when a tooth needs to be removed.",
     paragraphs: [
       "A tooth extraction is a minor surgical procedure. Therefore, it is natural that temporary changes will occur in the mouth after this procedure. However, Dr. Singleton follows some simple rules to help promote healing, prevent complications, and make you comfortable.",
+    ],
+  },
+  {
+    slug: "dental-emergencies",
+    title: "Dental Emergencies",
+    menuLabel: "Dental emergencies",
+    homeTeaser: "Urgent care for pain, broken teeth, swelling, and accidents.",
+    shortDescription:
+      "Fast, compassionate emergency dentistry when you need immediate relief and clear next steps.",
+    paragraphs: [
+      "Dental emergencies can happen at any time, and quick treatment can make all the difference. If you are dealing with severe tooth pain, a broken tooth, swelling, or a dental injury, our team is here to help as soon as possible.",
+      "We focus on relieving discomfort quickly, identifying the cause, and creating a clear treatment plan to protect your long-term oral health.",
     ],
   },
   {

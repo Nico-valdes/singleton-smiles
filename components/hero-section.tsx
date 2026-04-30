@@ -86,12 +86,15 @@ export function HeroSection() {
         </div>
 
         <h1
-          className="animate-hero-enter mb-5 font-serif text-[2.1rem] leading-[1.08] tracking-tight text-foreground text-balance sm:text-[2.6rem] md:text-[3.05rem] lg:text-[2.85rem] xl:text-[3.45rem] 2xl:text-[4.1rem]"
+          className="animate-hero-enter mb-5 font-serif leading-[1.05] tracking-tight text-foreground text-balance"
           style={{ animationDelay: "120ms" }}
         >
-          Modern, <em className="not-italic text-primary">Compassionate</em>
-          <br />
-          Dentistry
+          <span className="block text-[2.1rem] sm:text-[2.6rem] md:text-[3.05rem] lg:text-[2.85rem] xl:text-[3.45rem] 2xl:text-[4.1rem]">
+            Singleton Smiles
+          </span>
+          <span className="mt-1 block text-[1.6rem] text-primary sm:text-[2rem] md:text-[2.35rem] lg:text-[2.2rem] xl:text-[2.7rem] 2xl:text-[3.1rem]">
+            Your Smile Has a Home Here
+          </span>
         </h1>
 
         <div
