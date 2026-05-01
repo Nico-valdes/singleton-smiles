@@ -131,6 +131,32 @@ export const services: Service[] = [
     ],
   },
   {
+    slug: "wisdom-tooth-removal",
+    title: "Wisdom Tooth Removal",
+    menuLabel: "Wisdom tooth removal",
+    homeTeaser: "Common oral surgery to prevent pain, crowding, and future issues.",
+    shortDescription:
+      "Wisdom tooth removal helps protect oral health when third molars cause pain, grow in crooked, or are likely to create future problems.",
+    paragraphs: [
+      "Wisdom tooth removal is a common oral surgery procedure. Dentists may recommend this treatment to preserve your oral health and protect your other teeth from possible issues in the future.",
+      "You might need wisdom teeth removal if your wisdom teeth cause pain, grow in crooked, or result in other oral health issues. Sometimes dentists recommend removing wisdom teeth preventively, before issues have a chance to develop.",
+      "This common oral surgery procedure takes about an hour to complete. Full recovery takes about two weeks.",
+      "Your wisdom teeth, also called third molars, are in the very back of your mouth. Typically, they erupt sometime between the ages of 17 and 25.",
+    ],
+  },
+  {
+    slug: "root-canal-therapy",
+    title: "Root Canal Therapy",
+    menuLabel: "Root canal therapy",
+    homeTeaser: "Save infected teeth and relieve pain by treating the pulp.",
+    shortDescription:
+      "Root canal therapy treats deep infection inside the tooth to relieve pain and help preserve the natural tooth.",
+    paragraphs: [
+      "Root canal therapy is a restorative treatment used when a cavity, or tooth decay, has been left untreated long enough for a bacterial infection to reach the central tooth layer.",
+      "This area of the tooth, called the pulp chamber, contains sensitive nerve endings that cause pain when infected. When the infection reaches this far, it can put the entire tooth at risk.",
+    ],
+  },
+  {
     slug: "extractions",
     title: "Extractions",
     menuLabel: "Extractions",
