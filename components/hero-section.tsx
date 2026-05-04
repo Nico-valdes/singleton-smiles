@@ -25,10 +25,10 @@ export function HeroSection() {
         className={[
           "relative z-10 flex min-h-[100dvh] w-full flex-col px-5 pb-14 sm:px-8 sm:pb-16",
           /* Debajo del header fijo + logo móvil (sin superponer texto); mismo orden de magnitud que navigation.tsx */
-          "max-lg:justify-start max-lg:pt-[calc(env(safe-area-inset-top,0px)+10.5rem)] max-lg:text-center max-lg:items-center",
+          "max-lg:justify-start max-lg:pt-[calc(env(safe-area-inset-top,0px)+10.5rem+0.75rem)] max-lg:text-center max-lg:items-center",
           "lg:w-[54%] lg:justify-center lg:px-12 lg:py-12 lg:text-left lg:items-stretch xl:px-16 xl:py-14 2xl:px-24",
           /* Pantallas bajas (móvil): menos aire vertical entre bloques */
-          "[@media(max-height:700px)]:max-lg:pb-8 [@media(max-height:700px)]:max-lg:pt-[calc(env(safe-area-inset-top,0px)+9.75rem)]",
+          "[@media(max-height:700px)]:max-lg:pb-8 [@media(max-height:700px)]:max-lg:pt-[calc(env(safe-area-inset-top,0px)+10rem+0.75rem)]",
         ].join(" ")}
       >
         <style jsx>{`
