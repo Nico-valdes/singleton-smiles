@@ -23,7 +23,7 @@ export function HeroSection() {
 
       <div
         className={[
-          "relative z-10 flex min-h-[100dvh] w-full flex-col px-5 pb-14 sm:px-8 sm:pb-16",
+          "relative z-10 flex min-h-[100dvh] w-full flex-col px-5 pb-14 sm:px-8 sm:pb-16 mt-8 sm:mt-0",
           /* Debajo del header fijo + logo móvil (sin superponer texto); mismo orden de magnitud que navigation.tsx */
           "max-lg:justify-start max-lg:pt-[calc(env(safe-area-inset-top,0px)+10.5rem+0.75rem)] max-lg:text-center max-lg:items-center",
           "lg:w-[54%] lg:justify-center lg:px-12 lg:py-12 lg:text-left lg:items-stretch xl:px-16 xl:py-14 2xl:px-24",

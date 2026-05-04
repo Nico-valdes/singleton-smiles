@@ -59,7 +59,7 @@ export function Navigation() {
     <>
       <header
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 overflow-visible transition-[background-color,border-color,box-shadow,backdrop-filter] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
+          "absolute top-0 left-0 right-0 z-50 overflow-visible transition-[background-color,border-color,box-shadow,backdrop-filter] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
           scrolled
             ? "border-b border-slate-200/50 bg-white/95 backdrop-blur-xl shadow-sm"
             : "border-b border-transparent bg-transparent shadow-none backdrop-blur-none",
