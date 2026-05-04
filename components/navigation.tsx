@@ -59,19 +59,25 @@ export function Navigation() {
     <>
       <header
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-[background-color,border-color,box-shadow,backdrop-filter] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
+          "fixed top-0 left-0 right-0 z-50 overflow-visible transition-[background-color,border-color,box-shadow,backdrop-filter] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
           scrolled
             ? "border-b border-slate-200/50 bg-white/95 backdrop-blur-xl shadow-sm"
             : "border-b border-transparent bg-transparent shadow-none backdrop-blur-none",
         )}
       >
         <nav
-          className="mx-auto flex h-14 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:h-20 lg:px-8"
+          className="relative mx-auto grid h-14 max-w-7xl grid-cols-[2.5rem_minmax(0,1fr)_2.5rem] items-center gap-2 overflow-visible px-4 sm:px-6 lg:flex lg:h-20 lg:justify-between lg:gap-4 lg:px-8"
           aria-label="Main"
         >
+          {/* Móvil: mismo ancho que el menú para centrar el logo */}
+          <span className="col-start-1 row-start-1 size-10 shrink-0 lg:hidden" aria-hidden />
+
           <Link
             href="/"
-            className="relative flex shrink-0 items-center py-1 transition-opacity duration-300 hover:opacity-90"
+            className={cn(
+              "z-[60] flex min-w-0 shrink-0 items-center justify-center py-1 transition-opacity duration-300 hover:opacity-90",
+              "pointer-events-auto absolute left-1/2 top-full w-[min(94vw,28rem)] -translate-x-1/2 -translate-y-[36%] lg:static lg:w-auto lg:translate-x-0 lg:translate-y-0 lg:justify-start",
+            )}
             onClick={() => setMobileOpen(false)}
           >
             <Image
@@ -80,10 +86,13 @@ export function Navigation() {
               width={340}
               height={108}
               priority
-              className="h-10 w-auto max-w-[min(260px,54vw)] object-contain object-left sm:max-w-[270px] lg:h-14 lg:max-w-[320px]"
+              className={cn(
+                "h-[8.5rem] w-auto max-w-full object-contain object-center sm:h-36 sm:max-w-[min(94vw,30rem)]",
+                "max-lg:drop-shadow-[0_14px_32px_rgba(15,23,42,0.2)]",
+                "lg:h-14 lg:max-w-[320px] lg:object-left",
+              )}
             />
           </Link>
-    
 
           {/* Desktop — estilo original */}
           <div className="hidden items-center gap-8 lg:flex">
@@ -169,7 +178,7 @@ export function Navigation() {
             type="button"
             onClick={() => setMobileOpen(true)}
             className={cn(
-              "flex h-10 w-10 items-center justify-center rounded-lg transition-colors lg:hidden",
+              "z-[70] col-start-3 row-start-1 flex h-10 w-10 items-center justify-center justify-self-end rounded-lg transition-colors lg:z-auto lg:col-auto lg:row-auto lg:justify-self-auto lg:hidden",
               scrolled ? "text-slate-700 hover:bg-slate-100/80" : "text-slate-800 hover:bg-slate-900/[0.06]",
             )}
             aria-label="Open menu"
