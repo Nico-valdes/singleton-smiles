@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { Menu, X, Phone, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
@@ -38,6 +39,8 @@ const logoSrc = "/images/logosingleton.png"
 const logoAlt = "Singleton Smiles"
 
 export function Navigation() {
+  const pathname = usePathname()
+  const isHome = pathname === "/"
   const [mobileOpen, setMobileOpen] = useState(false)
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
@@ -66,17 +69,25 @@ export function Navigation() {
         )}
       >
         <nav
-          className="relative mx-auto grid h-14 max-w-7xl grid-cols-[2.5rem_minmax(0,1fr)_2.5rem] items-center gap-2 overflow-visible px-4 sm:px-6 lg:flex lg:h-20 lg:justify-between lg:gap-4 lg:px-8"
+          className={cn(
+            "relative mx-auto max-w-7xl items-center gap-2 overflow-visible px-4 sm:px-6 lg:h-20 lg:gap-4 lg:px-8",
+            isHome
+              ? "grid h-14 grid-cols-[2.5rem_minmax(0,1fr)_2.5rem] lg:flex lg:justify-between"
+              : "flex h-14 justify-between lg:justify-between",
+          )}
           aria-label="Main"
         >
-          {/* Móvil: mismo ancho que el menú para centrar el logo */}
-          <span className="col-start-1 row-start-1 size-10 shrink-0 lg:hidden" aria-hidden />
+          {isHome ? (
+            <span className="col-start-1 row-start-1 size-10 shrink-0 lg:hidden" aria-hidden />
+          ) : null}
 
           <Link
             href="/"
             className={cn(
-              "z-[60] flex min-w-0 shrink-0 items-center justify-center py-1 transition-opacity duration-300 hover:opacity-90",
-              "pointer-events-auto absolute left-1/2 top-full w-[min(94vw,28rem)] -translate-x-1/2 -translate-y-[36%] lg:static lg:w-auto lg:translate-x-0 lg:translate-y-0 lg:justify-start",
+              "z-[60] flex min-w-0 shrink-0 items-center py-1 transition-opacity duration-300 hover:opacity-90",
+              isHome
+                ? "pointer-events-auto justify-center absolute left-1/2 top-full w-[min(94vw,28rem)] -translate-x-1/2 -translate-y-[36%] lg:static lg:w-auto lg:translate-x-0 lg:translate-y-0 lg:justify-start"
+                : "pointer-events-auto justify-start lg:justify-start",
             )}
             onClick={() => setMobileOpen(false)}
           >
@@ -87,9 +98,16 @@ export function Navigation() {
               height={108}
               priority
               className={cn(
-                "h-[8.5rem] w-auto max-w-full object-contain object-center sm:h-36 sm:max-w-[min(94vw,30rem)]",
-                "max-lg:drop-shadow-[0_14px_32px_rgba(15,23,42,0.2)]",
-                "lg:h-14 lg:max-w-[320px] lg:object-left",
+                isHome
+                  ? [
+                      "h-[8.5rem] w-auto max-w-full object-contain object-center sm:h-36 sm:max-w-[min(94vw,30rem)]",
+                      "max-lg:drop-shadow-[0_14px_32px_rgba(15,23,42,0.2)]",
+                      "lg:h-14 lg:max-w-[320px] lg:object-left",
+                    ]
+                  : [
+                      "h-9 w-auto max-w-[min(160px,46vw)] object-contain object-left sm:h-10",
+                      "lg:h-14 lg:max-w-[320px]",
+                    ],
               )}
             />
           </Link>
@@ -178,7 +196,8 @@ export function Navigation() {
             type="button"
             onClick={() => setMobileOpen(true)}
             className={cn(
-              "z-[70] col-start-3 row-start-1 flex h-10 w-10 items-center justify-center justify-self-end rounded-lg transition-colors lg:z-auto lg:col-auto lg:row-auto lg:justify-self-auto lg:hidden",
+              "z-[70] flex h-10 w-10 shrink-0 items-center justify-center rounded-lg transition-colors lg:z-auto lg:hidden",
+              isHome && "col-start-3 row-start-1 justify-self-end",
               scrolled ? "text-slate-700 hover:bg-slate-100/80" : "text-slate-800 hover:bg-slate-900/[0.06]",
             )}
             aria-label="Open menu"
