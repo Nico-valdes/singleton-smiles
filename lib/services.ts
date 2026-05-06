@@ -173,9 +173,9 @@ export const services: Service[] = [
     menuLabel: "Dental emergencies",
     homeTeaser: "Same-day emergency dental treatment when urgent issues happen.",
     shortDescription:
-      "Same-day emergency dental treatment with a 24/7 emergency contact line at (734) 429-7415.",
+      "Same-day emergency dental treatment for toothaches, swelling/infections, and accidents involving teeth or jaw, with a 24/7 emergency contact line at (734) 429-7415.",
     paragraphs: [
-      "Dental emergencies can happen at any time, and quick treatment can make all the difference. If you are dealing with severe tooth pain, a broken tooth, swelling, or a dental injury, our team provides same-day emergency dental treatment whenever possible.",
+      "Dental emergencies can happen at any time, and quick treatment can make all the difference. If you are dealing with toothaches, swelling, infections, a broken tooth, or accidents involving teeth and jaw, our team provides same-day emergency dental treatment whenever possible.",
       "Need urgent help after hours? Emergency contact is available 24/7 at (734) 429-7415.",
       "We focus on relieving discomfort quickly, identifying the cause, and creating a clear treatment plan to protect your long-term oral health.",
     ],
