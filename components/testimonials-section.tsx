@@ -1,10 +1,11 @@
 "use client"
 
 import Link from "next/link"
-import { Star, ArrowRight } from "lucide-react"
+import { Star, ArrowRight, ExternalLink } from "lucide-react"
 import { RevealOnView } from "@/components/reveal-on-view"
 import { homepageSpotlightIds, reviews, type Review } from "@/lib/reviews"
 import { YoutubeTestimonialPreview } from "@/components/youtube-testimonial-preview"
+import { googleMapsPlaceReviewsUrl, googleReviewUrl } from "@/lib/seo"
 
 const homepageTestimonials = homepageSpotlightIds
   .map((id) => reviews.find((r) => r.id === id))
@@ -97,14 +98,43 @@ export function TestimonialsSection() {
           ))}
         </div>
 
-        <RevealOnView delayMs={120} className="mt-12 text-center">
-          <Link
-            href="/reviews"
-            className="inline-flex items-center font-medium text-blue-400 transition-[color,transform] duration-300 hover:translate-x-0.5 hover:text-blue-300 motion-reduce:hover:translate-x-0"
-          >
-            View all patient testimonials
-            <ArrowRight className="ml-2 h-4 w-4" />
-          </Link>
+        <RevealOnView delayMs={120} className="mt-12">
+          <div className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-5">
+            <a
+              href={googleMapsPlaceReviewsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white px-4 py-2 text-sm font-medium text-slate-800 transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-0.5 hover:border-white/40 hover:shadow-md"
+              aria-label="Read all reviews on Google"
+            >
+              <span className="inline-flex items-center text-base font-semibold tracking-tight" aria-hidden>
+                <span className="text-[#4285F4]">G</span>
+                <span className="text-[#EA4335]">o</span>
+                <span className="text-[#FBBC05]">o</span>
+                <span className="text-[#4285F4]">g</span>
+                <span className="text-[#34A853]">l</span>
+                <span className="text-[#EA4335]">e</span>
+              </span>
+              <span className="text-slate-600">Read reviews</span>
+              <ExternalLink className="h-4 w-4 text-slate-500" aria-hidden />
+            </a>
+            <a
+              href={googleReviewUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-full bg-blue-500 px-5 py-2.5 text-sm font-semibold text-white transition-[background-color,transform] duration-300 hover:-translate-y-0.5 hover:bg-blue-400"
+            >
+              Leave a Google review
+              <ExternalLink className="ml-2 h-4 w-4" aria-hidden />
+            </a>
+            <Link
+              href="/reviews"
+              className="inline-flex items-center font-medium text-blue-400 transition-[color,transform] duration-300 hover:translate-x-0.5 hover:text-blue-300 motion-reduce:hover:translate-x-0"
+            >
+              View all patient testimonials
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+          </div>
         </RevealOnView>
       </div>
     </section>

@@ -171,11 +171,12 @@ export const services: Service[] = [
     slug: "dental-emergencies",
     title: "Dental Emergencies",
     menuLabel: "Dental emergencies",
-    homeTeaser: "Urgent care for pain, broken teeth, swelling, and accidents.",
+    homeTeaser: "Same-day emergency dental treatment when urgent issues happen.",
     shortDescription:
-      "Fast, compassionate emergency dentistry when you need immediate relief and clear next steps.",
+      "Same-day emergency dental treatment with a 24/7 emergency contact line at (734) 429-7415.",
     paragraphs: [
-      "Dental emergencies can happen at any time, and quick treatment can make all the difference. If you are dealing with severe tooth pain, a broken tooth, swelling, or a dental injury, our team is here to help as soon as possible.",
+      "Dental emergencies can happen at any time, and quick treatment can make all the difference. If you are dealing with severe tooth pain, a broken tooth, swelling, or a dental injury, our team provides same-day emergency dental treatment whenever possible.",
+      "Need urgent help after hours? Emergency contact is available 24/7 at (734) 429-7415.",
       "We focus on relieving discomfort quickly, identifying the cause, and creating a clear treatment plan to protect your long-term oral health.",
     ],
   },

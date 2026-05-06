@@ -54,6 +54,9 @@ export const googlePlaceId = "ChIJeScqoBm7PIgReWZJP4AoMsY"
 export const googleMapsPlaceUrl =
   `https://www.google.com/maps/search/?api=1&query=Singleton+Smiles&query_place_id=${googlePlaceId}`
 
+export const googleMapsPlaceReviewsUrl =
+  `https://www.google.com/maps/place/Singleton+Smiles/@42.1788383,-83.7876681,621m/data=!3m1!1e3!4m8!3m7!1s0x883cbb19a02a2779:0xc63228803f496679!8m2!3d42.1788383!4d-83.7876681!9m1!1b1!16s%2Fg%2F1263133ss?entry=ttu&g_ep=EgoyMDI2MDUwMi4wIKXMDSoASAFQAw%3D%3D`
+
 export const googleReviewUrl =
   (typeof process !== "undefined" && process.env.NEXT_PUBLIC_GOOGLE_REVIEW_URL?.trim()) ||
   `https://search.google.com/local/writereview?placeid=${googlePlaceId}`

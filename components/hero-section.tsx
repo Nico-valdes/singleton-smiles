@@ -1,13 +1,35 @@
 "use client"
 
+import { useEffect, useRef } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, MapPin, Phone, Star } from "lucide-react"
 
 export function HeroSection() {
+  const sectionRef = useRef<HTMLElement | null>(null)
+
+  useEffect(() => {
+    const updateHeroVh = () => {
+      if (!sectionRef.current) return
+      sectionRef.current.style.setProperty("--hero-vh", `${window.innerHeight * 0.01}px`)
+    }
+
+    updateHeroVh()
+    window.addEventListener("resize", updateHeroVh)
+    window.addEventListener("orientationchange", updateHeroVh)
+
+    return () => {
+      window.removeEventListener("resize", updateHeroVh)
+      window.removeEventListener("orientationchange", updateHeroVh)
+    }
+  }, [])
+
   return (
-    <section className="relative min-h-[100dvh] w-full overflow-hidden bg-background">
+    <section
+      ref={sectionRef}
+      className="relative min-h-screen min-h-[100svh] min-h-[100dvh] min-h-[calc(var(--hero-vh,1vh)*100)] w-full overflow-hidden bg-background"
+    >
       <div className="absolute inset-y-0 right-0 w-full lg:w-[56%]">
         <Image
           src="/images/capilla.png"
@@ -23,7 +45,7 @@ export function HeroSection() {
 
       <div
         className={[
-          "relative z-10 flex min-h-[100dvh] w-full flex-col px-5 pb-14 sm:px-8 sm:pb-16 mt-8 sm:mt-0",
+          "relative z-10 mt-8 flex min-h-screen min-h-[100svh] min-h-[100dvh] min-h-[calc(var(--hero-vh,1vh)*100)] w-full flex-col px-5 pb-14 sm:mt-0 sm:px-8 sm:pb-16",
           /* Debajo del header fijo + logo móvil (sin superponer texto); mismo orden de magnitud que navigation.tsx */
           "max-lg:justify-start max-lg:pt-[calc(env(safe-area-inset-top,0px)+10.5rem+0.75rem)] max-lg:text-center max-lg:items-center",
           "lg:w-[54%] lg:justify-center lg:px-12 lg:py-12 lg:text-left lg:items-stretch xl:px-16 xl:py-14 2xl:px-24",
