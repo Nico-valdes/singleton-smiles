@@ -100,14 +100,14 @@ export function Navigation() {
               className={cn(
                 isHome
                   ? [
-                      "h-[8.5rem] w-auto max-w-full object-contain object-center sm:h-36 sm:max-w-[min(94vw,30rem)]",
-                      "max-lg:drop-shadow-[0_14px_32px_rgba(15,23,42,0.2)]",
-                      "lg:h-14 lg:max-w-[320px] lg:object-left",
-                    ]
+                    "h-[8.5rem] w-auto max-w-full object-contain object-center sm:h-36 sm:max-w-[min(94vw,30rem)]",
+                    "max-lg:drop-shadow-[0_14px_32px_rgba(15,23,42,0.2)]",
+                    "lg:h-14 lg:max-w-[320px] lg:object-left",
+                  ]
                   : [
-                      "h-9 w-auto max-w-[min(160px,46vw)] object-contain object-left sm:h-10",
-                      "lg:h-14 lg:max-w-[320px]",
-                    ],
+                    "h-9 w-auto max-w-[min(160px,46vw)] object-contain object-left sm:h-10",
+                    "lg:h-14 lg:max-w-[320px]",
+                  ],
               )}
             />
           </Link>
@@ -290,7 +290,7 @@ export function Navigation() {
                 <div
                   className={cn(
                     "overflow-hidden transition-[max-height] duration-200 ease-out",
-                    mobileServicesOpen ? "mt-1 max-h-[min(32rem,70vh)]" : "max-h-0",
+                    mobileServicesOpen ? "mt-1 max-h-[1000px]" : "max-h-0",
                   )}
                 >
                   <ul className="space-y-0.5 border-l-2 border-blue-100 pl-3">

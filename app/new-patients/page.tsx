@@ -120,18 +120,6 @@ export default function NewPatientsPage() {
         </div>
       </section>
 
-      <section id="forms" className="py-16 lg:py-24 bg-slate-50/50 border-t border-slate-100 scroll-mt-24">
-        <div className="max-w-3xl mx-auto px-6 lg:px-8">
-          <h2 className="font-serif text-3xl text-slate-900 mb-6">Patient forms</h2>
-          <p className="text-slate-600 leading-relaxed mb-6">
-            Save time on your first visit by completing new patient paperwork ahead of time. When downloadable PDFs are
-            ready, they will be linked here—until then, our team can email forms or have them ready when you arrive.
-          </p>
-          <div className="rounded-xl border border-dashed border-slate-200 bg-white p-8 text-center text-slate-500 text-sm">
-            Printable forms: coming soon — contact the office for the current packet.
-          </div>
-        </div>
-      </section>
     </SiteShell>
   )
 }

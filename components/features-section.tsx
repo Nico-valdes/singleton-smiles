@@ -83,24 +83,49 @@ export function FeaturesSection() {
         </div>
 
         <RevealOnView delayMs={100} className="mt-14 sm:mt-16">
-          <div className="mx-auto max-w-5xl">
-            <div className="mb-6 text-center sm:mb-8">
-              <p className="text-xs font-medium tracking-[0.2em] text-primary uppercase">Take a look inside</p>
-              <h3 className="mt-2 font-serif text-2xl text-slate-900 sm:text-3xl">Meet Singleton Smiles</h3>
-              <p className="mx-auto mt-2 max-w-2xl text-sm leading-relaxed text-slate-600 sm:text-base">
-                Tour our office and see how we make every visit calm, modern, and patient-first.
-              </p>
-            </div>
-            <div className="aspect-video w-full overflow-hidden rounded-2xl shadow-lg shadow-slate-900/10">
-              <iframe
-                className="h-full w-full"
-                src="https://www.youtube-nocookie.com/embed/9aUWmr1b5LE"
-                title="Singleton Smiles office tour"
-                loading="lazy"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              />
+          <div className="mx-auto max-w-6xl">
+            <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
+              <div>
+                <div className="mb-6 text-center sm:mb-8">
+                  <p className="text-xs font-medium tracking-[0.2em] text-primary uppercase">Take a look inside</p>
+                  <h3 className="mt-2 font-serif text-2xl text-slate-900 sm:text-3xl">Meet Singleton Smiles</h3>
+                  <p className="mx-auto mt-2 max-w-md text-sm leading-relaxed text-slate-600 sm:text-base">
+                    Tour our office and see how we make every visit calm, modern, and patient-first.
+                  </p>
+                </div>
+                <div className="aspect-video w-full overflow-hidden rounded-2xl shadow-lg shadow-slate-900/10">
+                  <iframe
+                    className="h-full w-full"
+                    src="https://www.youtube-nocookie.com/embed/9aUWmr1b5LE"
+                    title="Singleton Smiles office tour"
+                    loading="lazy"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  />
+                </div>
+              </div>
+
+              <div>
+                <div className="mb-6 text-center sm:mb-8">
+                  <p className="text-xs font-medium tracking-[0.2em] text-primary uppercase">Patient Comfort</p>
+                  <h3 className="mt-2 font-serif text-2xl text-slate-900 sm:text-3xl">Sedation Dentistry</h3>
+                  <p className="mx-auto mt-2 max-w-md text-sm leading-relaxed text-slate-600 sm:text-base">
+                    Discover how we help anxious patients feel relaxed and completely at ease during their visits.
+                  </p>
+                </div>
+                <div className="aspect-video w-full overflow-hidden rounded-2xl shadow-lg shadow-slate-900/10">
+                  <iframe
+                    className="h-full w-full"
+                    src="https://www.youtube-nocookie.com/embed/JXb_qAKY7rA"
+                    title="Singleton Smiles - Sedation Dentistry"
+                    loading="lazy"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </RevealOnView>
