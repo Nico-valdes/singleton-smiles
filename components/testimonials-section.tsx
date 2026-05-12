@@ -84,7 +84,7 @@ export function TestimonialsSection() {
           <div className="hidden h-12 w-px bg-white/10 sm:block" />
           <RevealOnView delayMs={160}>
             <div className="text-center">
-              <p className="mb-2 font-serif text-4xl text-white lg:text-5xl">40+</p>
+              <p className="mb-2 font-serif text-4xl text-white lg:text-5xl">30+</p>
               <p className="text-sm text-slate-400">Years of trust</p>
             </div>
           </RevealOnView>

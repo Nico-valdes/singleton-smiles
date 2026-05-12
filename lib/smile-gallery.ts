@@ -38,7 +38,7 @@ export const smileGalleryCases: SmileGalleryCase[] = [
   {
     id: "richard",
     title: "Richard",
-    before: [img("Richard B1.JPG")],
+    before: [img("Richard B1.jpeg")],
     after: [img("Richard A1.JPG")],
   },
   {

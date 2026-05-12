@@ -113,7 +113,14 @@ export function HeroSection() {
           style={{ animationDelay: "40ms" }}
         >
           <MapPin className="h-3 w-3 shrink-0 text-primary sm:h-3.5 sm:w-3.5" strokeWidth={2} />
-          <span className="font-sans tracking-wide">Saline, Michigan — Est. 1985</span>
+          <a 
+            href="https://maps.google.com/?q=1081+N+Ann+Arbor+St,+Saline,+MI+48176"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-sans tracking-wide transition-colors hover:text-primary"
+          >
+            1081 N. Ann Arbor, Saline, MI 48176
+          </a>
         </div>
 
         <h1
@@ -201,10 +208,15 @@ export function HeroSection() {
         </div>
       </div>
 
-      <div className="absolute bottom-6 right-6 z-10 hidden items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3.5 py-1.5 text-[11px] text-white/80 backdrop-blur-md lg:flex">
+      <a 
+        href="https://maps.google.com/?q=1081+N+Ann+Arbor+St,+Saline,+MI+48176"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="absolute bottom-6 right-6 z-10 hidden items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3.5 py-1.5 text-[11px] text-white/80 backdrop-blur-md transition-colors hover:bg-white/20 hover:text-white lg:flex"
+      >
         <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-        <span className="font-sans tracking-wide">1081 N. Ann Arbor St, Saline, MI</span>
-      </div>
+        <span className="font-sans tracking-wide">1081 N. Ann Arbor, Saline, MI 48176</span>
+      </a>
 
 
       <div className="pointer-events-none absolute bottom-5 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-1.5 text-muted-foreground lg:bottom-6 lg:left-[27%]">
